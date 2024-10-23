@@ -1,0 +1,128 @@
+.cabecalho__menu-hamburguer {
+    width: 24px;
+    height: 24px;
+    background-image: url("../assets/Menu.svg");
+    background-repeat: no-repeat; 
+    background-position: center;
+    display: inline-block;
+
+}
+
+.cabecalho {
+    background-color: var(--branco);
+    display: flex; /*flex container e os filhos viraram flex items*/
+    justify-content: space-between; /*separou cada elemento com o mesmo espaco entre eles, jogando um pra cada canto*/
+    align-items: center;
+    position: relative; /*libera a opcao de colocar outros atributos RLCB, fica diferente de estatico e deixa o absolute funcionar*/
+    
+}
+
+.container {
+    display: flex;
+    align-items: center;
+
+}
+
+.container__imagem {
+    padding: 1em;
+}
+
+.lista-menu {
+    display: none; /*desaparece o elemento, n ocupando espaco*/
+    position: absolute; /*permite que vc movimente o seu objeto de acordo com outro objeto, como o cabecalho*/
+    top: 100%; /*libera 100% do cabecalho e fica abaixo do menu hamburguer quando selecionado*/
+    width: 70vw;
+}
+
+.container__botao:checked~ .lista-menu { /*checked pseudoclass, detecta se o checkbox esta selecionada. til e um combinador css, pega a clase que vem depois, funciona como uma condicional, se o container__botao estiver checked ele mostra a lista, else n*/
+    display: block;
+}
+
+.lista-menu__titulo, .lista-menu__item {
+    padding: 1em;
+    background-color: var(--branco);
+}
+
+.lista-menu__titulo {
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+.lista-menu__link {
+    background: var(--azul-degrade);
+    -webkit-background-clip: text; /*webkit funciona em outro tipo de navegador*/
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /*prende a cor no texto*/
+    text-transform: uppercase; /*coloca tudo maiusculo*/
+}
+
+.lista-menu__item {
+    padding: 1em 1.5em;
+    
+}
+
+.container__botao {
+    display: none;
+}
+
+.container__titulo {
+    display: none;
+}
+
+.opcoes {
+    display: none;
+}
+
+@media screen and (min-width: 1024px)
+ {
+    .container__titulo, .container__titulo--negrito {
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+    }
+
+    .container__titulo {
+        font-weight: 400;
+        display: block;
+    }
+    .container__titulo--negrito {
+        font-weight: 700;
+    }
+
+    .opcoes {
+        display: flex;
+    }
+
+    .opcoes__item {
+        padding: 1em;
+        text-transform: uppercase;
+    }
+
+    .opcoes__link {
+        text-decoration: none;
+        color: var(--preto);
+    }
+
+    .container__imagem-transparente {
+        display: none;
+    }
+
+    .cabecalho__menu-hamburguer {
+        display: none;
+    }
+
+    .opcoes__botao:checked~.lista-menu {
+        display: block;
+        width: auto;
+    }
+
+    .opcoes__botao {
+        display: none;
+    }
+   
+    .lista-menu:hover .lista-menu__link:hover { 
+        background: var(--azul-degrade); 
+    }
+    .lista-menu__link { 
+        color: var(--branco) !important; }
+
+}
