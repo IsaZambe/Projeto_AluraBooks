@@ -88,6 +88,7 @@
 
 }
 
+
 @media screen and (min-width: 1024px) 
 {
     .carrossel__titulo {
@@ -113,8 +114,41 @@
         width: 40%;
         margin: 3em auto;
 
-        
+    }
+    
+}
+
+@media screen and (min-width: 1728px) 
+{
+    .carrossel__titulo {
+        font-size: 32px;
+    }    
+
+    .container-swiper {
+        display: flex;
+        align-items: center;
+        margin: 3em 5vw 5em 5vw; /* dir e esq 20vw que e pra afastar da largura da tela*/
     }
 
+    .swiper-pagination {
+        margin: 1em 0 2em 0;
+    }
+
+    .swiper {
+        width: 35%;
+        margin: auto;
+    }
+ 
+    .descricao__titulo {
+        font-size: 32px;
+    }
+
+    .descricao__texto {
+        font-size: 18px;
+    }
+
+    .descricao {
+        margin-right: 5em;
+    }
     
 }

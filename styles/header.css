@@ -73,6 +73,10 @@
     display: none;
 }
 
+.container__texto {
+    display: none;
+}
+
 @media screen and (min-width: 1024px)
  {
     .container__titulo, .container__titulo--negrito {
@@ -124,5 +128,29 @@
     }
     .lista-menu__link { 
         color: var(--branco) !important; }
+
+}
+
+@media screen and (min-width: 1728px) 
+{
+    .cabecalho {
+        padding: 0 1em;
+    }
+
+    .opcoes {
+        margin-right: auto;
+    }
+
+    .container__link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--preto);
+    } 
+    
+    .container__texto {
+        display: block;
+        font-size: 20px;
+}
 
 }
